@@ -1,15 +1,37 @@
 package com.vijay.modulith.hotelordering.domain.entity;
 
-/**
- * Room inventory entity for per-day room availability tracking
- * Manages room allocation and availability for specific dates
- */
-public class RoomInventory {
-    
-    // TODO: Add inventory properties (id, hotelId, roomTypeId, date, totalRooms, availableRooms, etc.)
-    // TODO: Add inventory status tracking
-    // TODO: Add hold and allocation tracking
-    // TODO: Add pricing per date
-    // TODO: Add inventory constraints and rules
-    
+import com.vijay.common.BaseEntity;
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.EqualsAndHashCode;
+
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "room_inventory")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+public class RoomInventory extends BaseEntity {
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "room_type_id", nullable = false)
+    private RoomType roomType;
+
+    @Column(nullable = false)
+    private LocalDate date;
+
+    @Column(nullable = false)
+    private Integer availableRooms;
+
+    @Column(nullable = false)
+    private Integer reservedRooms;
+
+    @Column(nullable = false)
+    private Integer blockedRooms;
+
+    @Column(nullable = false)
+    private Boolean active = true;
 }

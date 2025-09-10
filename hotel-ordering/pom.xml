@@ -2,23 +2,40 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    
+
     <parent>
         <groupId>com.vijay</groupId>
         <artifactId>modulith-app</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    
+
     <artifactId>hotel-ordering</artifactId>
     <name>Hotel Ordering Module</name>
     <description>Hotel room booking and ordering module</description>
-    
+
     <dependencies>
+        <!-- Common module for BaseEntity -->
         <dependency>
             <groupId>com.vijay</groupId>
             <artifactId>common</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+        <!-- ID Generation module for unique IDs -->
+       <!-- <dependency>
+            <groupId>com.vijay</groupId>
+            <artifactId>id-generation</artifactId>
+            <version>${project.version}</version>
+        </dependency>-->
+
+        <!-- User Management module for user references -->
+        <dependency>
+            <groupId>com.vijay</groupId>
+            <artifactId>user-management</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Spring Boot starters -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -28,9 +45,22 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <!-- Lombok -->
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

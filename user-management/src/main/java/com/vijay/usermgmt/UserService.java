@@ -21,12 +21,7 @@ public class UserService {
         this.eventPublisher = eventPublisher;
     }
     
-    public User createUser(User user) {
-        User savedUser = userRepository.save(user);
-        // Publish event for other modules to listen
-        eventPublisher.publishEvent(new UserCreatedEvent(savedUser.getId(), savedUser.getEmail()));
-        return savedUser;
-    }
+
     
     public Optional<User> findById(Long id) {
         return userRepository.findById(id);

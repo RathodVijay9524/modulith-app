@@ -39,12 +39,12 @@ public class PaymentService {
             savedPayment = paymentRepository.save(savedPayment);
             
             // Publish payment completed event
-            eventPublisher.publishEvent(new PaymentCompletedEvent(
+        /*    eventPublisher.publishEvent(new PaymentCompletedEvent(
                 savedPayment.getId(),
                 savedPayment.getUserId(),
                 savedPayment.getBookingId(),
                 savedPayment.getAmount()
-            ));
+            ));*/
             
         } catch (Exception e) {
             savedPayment.setStatus(Payment.PaymentStatus.FAILED);

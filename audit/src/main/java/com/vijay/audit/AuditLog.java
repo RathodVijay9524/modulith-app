@@ -3,6 +3,7 @@ package com.vijay.audit;
 import com.vijay.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.EqualsAndHashCode;
 
 import java.time.LocalDateTime;
 
@@ -11,12 +12,12 @@ import java.time.LocalDateTime;
  * Tracks all system events and user actions for compliance and monitoring
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
 @Table(name = "audit_logs")
+@EqualsAndHashCode(callSuper = true)
 public class AuditLog extends BaseEntity {
     
     @Column(nullable = false)
