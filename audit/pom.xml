@@ -38,6 +38,11 @@
 			<artifactId>id-generation</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.vijay</groupId>
+			<artifactId>user-management</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 		
 		<!-- Test Dependencies -->
 		<dependency>

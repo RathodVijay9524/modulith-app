@@ -1,6 +1,6 @@
 package com.vijay.audit;
 
-import com.vijay.idgeneration.IdGeneratorService;
+import com.vijay.idgeneration.IdGenerationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,6 @@ import java.util.List;
 public class AuditService {
     
     private final AuditLogRepository auditLogRepository;
-    private final IdGeneratorService idGeneratorService;
     
     /**
      * Create an audit log entry

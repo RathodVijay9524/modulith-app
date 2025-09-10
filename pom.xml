@@ -39,6 +39,7 @@
 		<module>hotel-ordering</module>
 		<module>notification</module>
 		<module>payments</module>
+		<module>audit</module>
 		<module>application</module>
 	</modules>
 
